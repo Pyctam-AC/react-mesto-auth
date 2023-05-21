@@ -68,7 +68,7 @@ function Main({
           aria-label="фотографии различных мест России"
         >
           <ul className="place__card">
-            <CurrentUserContext.Provider value={currentUser}>
+            {/* <CurrentUserContext.Provider value={currentUser}> */}
               {cards?.map((item) => (
                 <Card
                   card={item}
@@ -76,9 +76,10 @@ function Main({
                   onCardClick={onCardClick}
                   onLikeClick={onLikeClick}
                   onCardDelete={onCardDelete}
+                  currentUser={currentUser}
                 />
               ))}
-            </CurrentUserContext.Provider>
+            {/* </CurrentUserContext.Provider> */}
           </ul>
         </section>
       </main>

@@ -3,7 +3,6 @@ import { useForm } from "react-hook-form";
 import { useEffect } from "react";
 import InputForm from "./InputForm";
 import Header from "./Header";
-import {Link, Navigate, useNavigate} from 'react-router-dom';
 
 function Login({ authData, loggedIn }) {
   const {
@@ -61,6 +60,7 @@ function Login({ authData, loggedIn }) {
           errors={errors}
           placeholder="Пароль"
           sing={true}
+          autoComplete="on"
         />
         <button
           type="submit"

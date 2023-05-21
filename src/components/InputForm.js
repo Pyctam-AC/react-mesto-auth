@@ -7,7 +7,8 @@ const InputForm = forwardRef(
     placeholder,
     onChange,
     errors,
-    sing
+    sing,
+    autoComplete
   },
     ref
   ) {
@@ -23,6 +24,7 @@ const InputForm = forwardRef(
         ${sing? "input__black-theme" : ""}
           input_type_${name}
           ${errors[name]? "popup__input_invalid" : ""}`}
+        autoComplete={autoComplete}
       />
       {errors &&
         <span className={`error input-error-${name}`}>

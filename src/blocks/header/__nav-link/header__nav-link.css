@@ -1,9 +1,12 @@
 .header__nav-link{
+  margin: 0;
+  margin-top: 15px;
   font-family: 'Inter', Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
   line-height: 22px;
+  text-decoration: none;
   text-align: right;
   cursor: pointer;
   transition: .3s linear;
@@ -16,4 +19,11 @@
 
 .header__nav-link:active {
   scale: .98;
+}
+
+@media screen and (max-width: 890px) {
+  .header__nav-link {
+    font-size: 14px;
+  line-height: 17px;
+  }
 }

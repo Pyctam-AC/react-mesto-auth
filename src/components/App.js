@@ -1,6 +1,5 @@
 import React from 'react';
 import { useState, useEffect } from "react";
-import Header from "./Header";
 import Main from "./Main";
 import Footer from "./Footer";
 import ImagePopup from './ImagePopup';
@@ -11,7 +10,7 @@ import EditProfilePopup from './EditProfilePopup';
 import EditAvatarPopup from './EditAvatarPopup'
 import AddPlacePopup from './AddPlacePopup';
 import DeleteCardPopup from './DeleteCardPopup';
-import { Route, Routes, Navigate, Link, useNavigate } from 'react-router-dom';
+import { Route, Routes, useNavigate } from 'react-router-dom';
 import Login from './Login';
 import Register from './Register';
 import ProtectedRoute from './ProtectedRoute';
@@ -39,9 +38,12 @@ function App() {
 
 //авторизация пользователя
 
+  const [emailUser, setUserData] = useState(null);
+
   const [loggedIn, setLoggedIn] = useState(null);
 
   const authorizationUser = (data) => {
+    setUserData(data.email)
     auth.autorize(data)
     .then((data) => {
       console.log(data)
@@ -56,8 +58,6 @@ function App() {
   }
 
 //аутентификация пользователя
-
-  const [emailUser, setUserData] = useState(null);
 
   const token = localStorage.getItem('token')
   const checkToken = () => {
@@ -330,7 +330,7 @@ function App() {
                         emailUser={emailUser}
                         isLoading={isLoading}
                         loggedIn={loggedIn}
-                        handleLogOut={handleLogOut()}
+                        handleLogOut={handleLogOut}
                       />
                       <EditProfilePopup
                         isOpen={isProfilePopupVisible}
@@ -374,16 +374,6 @@ function App() {
                 />
               }
             />
-           {/*  <Route
-              path="/"
-              element={
-                loggedIn ? (
-                  <Navigate to="/signin" replace />
-                ) : (
-                  <Navigate to="/signup" replace />
-                )
-              }
-            /> */}
           </Routes>
         </CardsContext.Provider>
       </CurrentUserContext.Provider>

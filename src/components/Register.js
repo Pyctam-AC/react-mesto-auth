@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
-import {Link, Navigate, useNavigate} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import InputForm from "./InputForm";
 import Header from "./Header";
 
@@ -11,7 +11,7 @@ function Registr({regData}) {
 
   const {
     register,
-    formState: { errors, isValid },
+    formState: { errors },
     handleSubmit,
     reset,
   } = useForm({
@@ -33,7 +33,7 @@ function Registr({regData}) {
     <>
       <Header />
       <form
-        name='Регистрация'
+        name="Регистрация"
         className={`form`}
         noValidate
         onSubmit={handleSubmit(onSubmit)}
@@ -52,7 +52,7 @@ function Registr({regData}) {
           placeholder="Email"
           errors={errors}
           sing={true}
-      />
+        />
         <InputForm
           type="password"
           {...register("password", {
@@ -77,12 +77,12 @@ function Registr({regData}) {
         >
           Зарегестрироваться
         </button>
-        <p className="sing-subtitle">
-          Уже зарегистрированы?
-          <Link to="/signin" className="sing-subtitle-link">
+        <div className="sing-subtitle">
+          <p className="sing-subtitle__text">Уже зарегистрированы?</p>
+          <Link to="/signin" className="sing-subtitle__link">
             Войти
           </Link>
-        </p>
+        </div>
       </form>
     </>
   );

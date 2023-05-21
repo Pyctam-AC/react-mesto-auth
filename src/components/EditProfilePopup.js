@@ -28,12 +28,10 @@ function EditProfilePopup({
   };
 
   useEffect(() => {
-    if(isOpen) {
-      reset({
-        name: currentUser?.name,
-        about: currentUser?.about
-      });
-    }
+    let defaultValues = {};
+    defaultValues.name = currentUser?.name;
+    defaultValues.about = currentUser?.about;
+    reset({ ...defaultValues });
   }, [currentUser, reset]);
 
   return (

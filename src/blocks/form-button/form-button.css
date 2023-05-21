@@ -19,10 +19,9 @@
 }
 
 .form-button__white-theme {
-  margin-top: 216px;
+  margin-top: 160px;
   margin-bottom: 10px;
   background-color: #FFF;
-  background-color: rgba(255,255,255, .7);
   color: black;
 }
 
@@ -36,7 +35,7 @@
 }
 
 .form-button__white-theme:hover {
-  background-color: rgba(255,255,255, 1);
+  background-color: rgba(255,255,255, .8);
 }
 
 .form-button__white-theme:active {
