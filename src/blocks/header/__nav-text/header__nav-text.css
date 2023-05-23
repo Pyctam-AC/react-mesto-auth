@@ -16,5 +16,7 @@
   .header__nav-text {
     font-size: 14px;
     line-height: 17px;
+    margin-bottom: 18px;
+    margin-right: 0;
   }
 }

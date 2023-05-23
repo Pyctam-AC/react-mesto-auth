@@ -50,6 +50,7 @@ function App() {
       setLoggedIn(true);
       navigate('/')
       localStorage.setItem('token', data.token);
+      navBarVisible(false)
     })
     .catch(err => {
       console.log(err);
@@ -192,6 +193,7 @@ function App() {
   const [isDeleteCardPopupVisible, deleteCardPopupVisible] = useState(false);
   const [isRegistrOkPopupVisible, registrOkPopupVisible] = useState(false);
   const [isErrorPopupVisible, ErrorPopupVisible] = useState(false);
+  const [isNavBarVisible, navBarVisible] = useState(false);
 
   const [selectedCard, setCardPopup] = useState(null);
   const [deletedCard, deletePopup] = useState(null);
@@ -221,6 +223,10 @@ function App() {
   const closeRegistrOkPopup = () => {
     closeAllPopups()
     navigate('/signin')
+  }
+
+  const handlOpenNav = () => {
+    navBarVisible(!isNavBarVisible)
   }
 
   const closeOverlay = (e) => {
@@ -271,7 +277,12 @@ function App() {
   }
 
   if (loggedIn === null) {
-    return ( <Spinner />)
+    return (
+      <div className="page">
+        <Spinner />
+        <Footer />
+      </div>
+    )
   }
 
   return (
@@ -321,38 +332,38 @@ function App() {
                   element={
                     <>
                       <Main
-                        onEditProfile={() => handleOpenEditProfilePopup()}
-                        onAddPlace={() => handleOpenNewPlacePopup()}
-                        onEditAvatar={() => handleOpenNewAvatarPopup()}
-                        onCardClick={(card) => handleOpenPopupImage(card)}
-                        onLikeClick={(card) => handleCardLike(card)}
-                        onCardDelete={(card) => handleOpenPopupDeleteCard(card)}
+                        onEditProfile={handleOpenEditProfilePopup}
+                        onAddPlace={handleOpenNewPlacePopup}
+                        onEditAvatar={handleOpenNewAvatarPopup}
+                        onCardClick={handleOpenPopupImage}
+                        onLikeClick={handleCardLike}
+                        onCardDelete={handleOpenPopupDeleteCard}
                         emailUser={emailUser}
                         isLoading={isLoading}
                         loggedIn={loggedIn}
                         handleLogOut={handleLogOut}
+                        handlOpenNav={handlOpenNav}
+                        isOpen={isNavBarVisible}
                       />
                       <EditProfilePopup
                         isOpen={isProfilePopupVisible}
                         onClose={closeAllPopups}
                         closeOverlay={closeOverlay}
-                        onUpdateUser={(dataUser) => handleUpdateUser(dataUser)}
+                        onUpdateUser={handleUpdateUser}
                         isLoading={isLoading}
                       />
                       <EditAvatarPopup
                         isOpen={isAvatarPopupVisible}
                         onClose={closeAllPopups}
                         closeOverlay={closeOverlay}
-                        onUpdateAvatar={(avatar) => handleUpdateAvatar(avatar)}
+                        onUpdateAvatar={handleUpdateAvatar}
                         isLoading={isLoading}
                       />
                       <AddPlacePopup
                         isOpen={isNewCardPopupVisible}
                         onClose={closeAllPopups}
                         closeOverlay={closeOverlay}
-                        onAddPlace={(dataNewPlace) =>
-                          handleAddPlaceSubmit(dataNewPlace)
-                        }
+                        onAddPlace={handleAddPlaceSubmit}
                         isLoading={isLoading}
                       />
                       <DeleteCardPopup
@@ -360,7 +371,7 @@ function App() {
                         onClose={closeAllPopups}
                         closeOverlay={closeOverlay}
                         card={deletedCard}
-                        onDeleteCard={(card) => handleCardDelete(card)}
+                        onDeleteCard={handleCardDelete}
                         isLoading={isLoading}
                       />
                       <ImagePopup

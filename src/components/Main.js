@@ -15,7 +15,9 @@ function Main({
   emailUser,
   isLoading,
   loggedIn,
-  handleLogOut
+  handleLogOut,
+  handlOpenNav,
+  isOpen
 }) {
   const currentUser = React.useContext(CurrentUserContext);
   const cards = React.useContext(CardsContext);
@@ -26,6 +28,8 @@ function Main({
         emailUser={emailUser}
         loggedIn={loggedIn}
         handleLogOut={handleLogOut}
+        handlOpenNav={handlOpenNav}
+        isOpen={isOpen}
       />
 
       <main className="content">
