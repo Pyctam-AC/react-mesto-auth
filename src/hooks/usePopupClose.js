@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-function usePopupClose(isOpen, closeAllPopups) {
+function usePopupClose(isOpen, styleOpenPopup, closeAllPopups) {
 
   useEffect(() => {
 
@@ -8,7 +8,7 @@ function usePopupClose(isOpen, closeAllPopups) {
 
     const closeOverlay = (e) => {
       e.stopPropagation();
-      if (e.target.classList.contains("popup_opened")) {
+      if (e.target.classList.contains(styleOpenPopup)) {
         closeAllPopups();
       }
     };
@@ -26,7 +26,7 @@ function usePopupClose(isOpen, closeAllPopups) {
       document.removeEventListener("keydown", closeEsc);
       document.removeEventListener("mousedown", closeOverlay);
     };
-  }, [isOpen, closeAllPopups]);
+  }, [isOpen, styleOpenPopup, closeAllPopups]);
 }
 
 export default usePopupClose;

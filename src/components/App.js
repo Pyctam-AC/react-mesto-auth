@@ -248,6 +248,7 @@ function App() {
     isDeleteCardPopupVisible ||
     isRegistrOkPopupVisible ||
     isErrorPopupVisible,
+    "popup_opened",
     closeAllPopups)
 
   if (loggedIn === null) {
