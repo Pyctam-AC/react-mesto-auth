@@ -25,7 +25,7 @@ function ErrorPopup(props) {
       </div>
     </div>
   );
-}
+};
 
 export default ErrorPopup;
 

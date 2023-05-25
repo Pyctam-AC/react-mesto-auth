@@ -10,13 +10,13 @@ function usePopupClose(isOpen, styleOpenPopup, closeAllPopups) {
       e.stopPropagation();
       if (e.target.classList.contains(styleOpenPopup)) {
         closeAllPopups();
-      }
+      };
     };
 
     const closeEsc = (e) => {
       if (e.key === "Escape") {
         closeAllPopups();
-      }
+      };
     };
 
     document.addEventListener("keydown", closeEsc);

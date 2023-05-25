@@ -1,6 +1,6 @@
 import React from "react";
 
-function ImagePopup({ isOpen, onClose, card, closeOverlay, closeEsc }) {
+function ImagePopup({ isOpen, onClose, card, closeOverlay }) {
 
   return (
     <div className={`popup popup_img ${isOpen ? "popup_opened" : ""}`}
@@ -19,6 +19,6 @@ function ImagePopup({ isOpen, onClose, card, closeOverlay, closeEsc }) {
       </div>
     </div>
   );
-}
+};
 
 export default ImagePopup;

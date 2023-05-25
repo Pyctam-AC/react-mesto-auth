@@ -84,6 +84,6 @@ function EditProfilePopup({
       />
     </PopupWithForm>
   );
-}
+};
 
 export default EditProfilePopup;

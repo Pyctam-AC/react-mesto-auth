@@ -27,6 +27,6 @@ function DeleteCardPopup({
       isDirty={true}
     />
   );
-}
+};
 
 export default DeleteCardPopup;

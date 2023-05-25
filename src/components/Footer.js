@@ -6,6 +6,6 @@ function Footer() {
       <p className="footer__text">© 2023 Mesto Russia</p>
     </footer>
   );
-}
+};
 
 export default Footer;

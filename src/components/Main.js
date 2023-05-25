@@ -18,7 +18,7 @@ function Main({
   handleLogOut,
   handlOpenNav,
   isOpen
-}) {
+  })  {
   const currentUser = React.useContext(CurrentUserContext);
   const cards = React.useContext(CardsContext);
 
@@ -72,7 +72,7 @@ function Main({
           aria-label="фотографии различных мест России"
         >
           <ul className="place__card">
-            {/* <CurrentUserContext.Provider value={currentUser}> */}
+
               {cards?.map((item) => (
                 <Card
                   card={item}
@@ -83,7 +83,7 @@ function Main({
                   currentUser={currentUser}
                 />
               ))}
-            {/* </CurrentUserContext.Provider> */}
+            
           </ul>
         </section>
       </main>

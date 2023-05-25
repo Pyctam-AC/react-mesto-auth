@@ -50,6 +50,6 @@ function Card({
       </div>
     </li>
   );
-}
+};
 
 export default Card;

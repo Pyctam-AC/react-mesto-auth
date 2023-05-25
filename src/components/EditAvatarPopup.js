@@ -59,6 +59,6 @@ function EditAvatarPopup({
       />
     </PopupWithForm>
   );
-}
+};
 
 export default EditAvatarPopup;

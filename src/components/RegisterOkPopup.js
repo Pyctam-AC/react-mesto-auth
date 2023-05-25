@@ -25,6 +25,6 @@ function RegisterOkPopup(props) {
       </div>
     </div>
   );
-}
+};
 
 export default RegisterOkPopup;

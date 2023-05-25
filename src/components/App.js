@@ -57,7 +57,7 @@ function App() {
       console.log(err);
       ErrorPopupVisible(true);
     });
-  }
+  };
 
 //аутентификация пользователя
 
@@ -80,7 +80,7 @@ function App() {
 
   useEffect(() => {
     checkToken();
-  }, [])
+  }, []);
 
   const handleLogOut = () => {
     localStorage.removeItem('token');

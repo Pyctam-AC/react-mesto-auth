@@ -77,6 +77,6 @@ function AddPlacePopup({
       />
     </PopupWithForm>
   );
-}
+};
 
 export default AddPlacePopup;

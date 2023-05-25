@@ -21,6 +21,9 @@
 /*form*/
 @import url(../blocks/form/form.css);
 
+@import url(../blocks/form-button/form-button.css);
+@import url(../blocks/form-button/_disabled/form-button_disabled.css);
+
 @import url(../blocks/sing-title/sing-title.css);
 @import url(../blocks/sing-subtitle/sing-subtitle.css);
 @import url(../blocks/sing-subtitle/__text/sing-subtitle__text.css);
@@ -28,9 +31,6 @@
 
 /*input*/
 @import url(../blocks/input/input.css);
-
-@import url(../blocks/form-button/form-button.css);
-@import url(../blocks/form-button/_disabled/form-button_disabled.css);
 
 /*profile*/
 @import url(../blocks/profile/profile.css);

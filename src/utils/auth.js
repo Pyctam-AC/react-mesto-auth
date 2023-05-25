@@ -6,7 +6,7 @@ const getResult = (res) => {
   } else {
     return Promise.reject (`Ошибка: ${res.status}`)
   }
-}
+};
 
 export const register = (data) => {
   return fetch(`${BASE_URL}/signup`, {
@@ -17,7 +17,7 @@ export const register = (data) => {
     body: JSON.stringify(data)
   })
   .then(res => getResult (res))
-}
+};
 
 export const autorize = (data) => {
   return fetch(`${BASE_URL}/signin`, {
@@ -29,7 +29,7 @@ export const autorize = (data) => {
     body: JSON.stringify(data)
   })
   .then(res => getResult (res))
-}
+};
 
 export const getContent = (token) => {
   return fetch(`${BASE_URL}/users/me`, {

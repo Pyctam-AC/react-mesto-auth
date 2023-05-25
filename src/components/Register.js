@@ -88,4 +88,4 @@ function Registr({regData}) {
   );
 }
 
-export default Registr
+export default Registr;

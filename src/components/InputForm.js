@@ -33,11 +33,7 @@ const InputForm = forwardRef(
       }
     </>
   );
-})
+});
 
 export default InputForm;
 
-/* {`
-          popup__input
-           ${errors ? 'popup__input_invalid' : ''}
-           `} */

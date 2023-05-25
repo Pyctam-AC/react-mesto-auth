@@ -71,6 +71,6 @@ function Login({ authData, loggedIn }) {
       </form>
     </>
   );
-}
+};
 
 export default Login;
