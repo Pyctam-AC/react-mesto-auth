@@ -18,6 +18,7 @@ import * as auth from '../utils/auth';
 import RegisterOkPopup from './RegisterOkPopup';
 import ErrorPopup from './ErrorPopup';
 import Spinner from './Spinner';
+import usePopupClose from '../hooks/usePopupClose';
 
 function App() {
 
@@ -229,43 +230,6 @@ function App() {
     navBarVisible(!isNavBarVisible)
   }
 
-  const closeOverlay = (e) => {
-    e.stopPropagation()
-    if (e.target === e.currentTarget) {
-      closeAllPopups()
-    }
-  }
-
-  useEffect(() => {
-    const closeEsc = (e) => {
-      if (e.key === "Escape") {
-        closeAllPopups();
-      }
-    };
-    if (
-      isNewCardPopupVisible ||
-      isPhotoCardPopupVisible ||
-      isProfilePopupVisible ||
-      isAvatarPopupVisible ||
-      isDeleteCardPopupVisible ||
-      isRegistrOkPopupVisible ||
-      isErrorPopupVisible
-    ) {
-      document.addEventListener("keydown", closeEsc)
-    }
-    return () => {
-      document.removeEventListener("keydown", closeEsc);
-    };
-  }, [
-    isNewCardPopupVisible,
-    isPhotoCardPopupVisible,
-    isProfilePopupVisible,
-    isAvatarPopupVisible,
-    isDeleteCardPopupVisible,
-    isRegistrOkPopupVisible,
-    isErrorPopupVisible
-  ]);
-
   const closeAllPopups = () => {
     setProfilePopupVisible(false);
     setNewCardPopupVisible(false);
@@ -275,6 +239,16 @@ function App() {
     ErrorPopupVisible(false);
     registrOkPopupVisible(false);
   }
+
+  usePopupClose(
+    isNewCardPopupVisible ||
+    isPhotoCardPopupVisible ||
+    isProfilePopupVisible ||
+    isAvatarPopupVisible ||
+    isDeleteCardPopupVisible ||
+    isRegistrOkPopupVisible ||
+    isErrorPopupVisible,
+    closeAllPopups)
 
   if (loggedIn === null) {
     return (
@@ -298,12 +272,10 @@ function App() {
                   <RegisterOkPopup
                     isOpen={isRegistrOkPopupVisible}
                     onClose={closeRegistrOkPopup}
-                    closeOverlay={closeOverlay}
                   />
                   <ErrorPopup
                     isOpen={isErrorPopupVisible}
                     onClose={closeAllPopups}
-                    closeOverlay={closeOverlay}
                   />
                 </>
               }
@@ -318,7 +290,6 @@ function App() {
                   <ErrorPopup
                     isOpen={isErrorPopupVisible}
                     onClose={closeAllPopups}
-                    closeOverlay={closeOverlay}
                   />
                 </>
               }
@@ -348,28 +319,24 @@ function App() {
                       <EditProfilePopup
                         isOpen={isProfilePopupVisible}
                         onClose={closeAllPopups}
-                        closeOverlay={closeOverlay}
                         onUpdateUser={handleUpdateUser}
                         isLoading={isLoading}
                       />
                       <EditAvatarPopup
                         isOpen={isAvatarPopupVisible}
                         onClose={closeAllPopups}
-                        closeOverlay={closeOverlay}
                         onUpdateAvatar={handleUpdateAvatar}
                         isLoading={isLoading}
                       />
                       <AddPlacePopup
                         isOpen={isNewCardPopupVisible}
                         onClose={closeAllPopups}
-                        closeOverlay={closeOverlay}
                         onAddPlace={handleAddPlaceSubmit}
                         isLoading={isLoading}
                       />
                       <DeleteCardPopup
                         isOpen={isDeleteCardPopupVisible}
                         onClose={closeAllPopups}
-                        closeOverlay={closeOverlay}
                         card={deletedCard}
                         onDeleteCard={handleCardDelete}
                         isLoading={isLoading}
@@ -378,7 +345,6 @@ function App() {
                         isOpen={isPhotoCardPopupVisible}
                         card={selectedCard}
                         onClose={closeAllPopups}
-                        closeOverlay={closeOverlay}
                       />
                     </>
                   }
