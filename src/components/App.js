@@ -85,6 +85,7 @@ function App() {
   const handleLogOut = () => {
     localStorage.removeItem('token');
     navigate('/signin');
+    navBarVisible(false)
   }
 
 //эффект загрузки
@@ -201,24 +202,29 @@ function App() {
 
   const handleOpenNewPlacePopup = () => {
     setNewCardPopupVisible(true);
+    navBarVisible(false)
   };
 
   const handleOpenEditProfilePopup = () => {
     setProfilePopupVisible(true);
+    navBarVisible(false)
   };
 
   const handleOpenNewAvatarPopup = () => {
     setAvatarPopupVisible(true);
+    navBarVisible(false)
   };
 
   const handleOpenPopupImage = (card) => {
     setPhotoCardPopupVisible(true);
     setCardPopup(card);
+    navBarVisible(false)
   };
 
   const handleOpenPopupDeleteCard = (card) => {
     deleteCardPopupVisible(true);
     deletePopup(card);
+    navBarVisible(false)
   };
 
   const closeRegistrOkPopup = () => {
