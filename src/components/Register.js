@@ -1,13 +1,11 @@
 import React from "react";
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
-import {Link, useNavigate} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import InputForm from "./InputForm";
 import Header from "./Header";
 
 function Registr({regData}) {
-
-  const navigate = useNavigate();
 
   const {
     register,

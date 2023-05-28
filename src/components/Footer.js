@@ -1,9 +1,12 @@
 import React from 'react';
 
-function Footer() {
+function Footer({isOpen}) {
   return (
-    <footer className="footer">
-      <p className="footer__text">© 2023 Mesto Russia</p>
+    <footer className={`footer ${
+      isOpen ? "footer__nav-bar" : ""
+    }`}
+    >
+      <p className="footer__text">© {new Date().getFullYear()} Mesto Russia</p>
     </footer>
   );
 };

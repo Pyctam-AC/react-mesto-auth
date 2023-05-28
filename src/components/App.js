@@ -261,7 +261,10 @@ function App() {
   }
 
   return (
-    <div className="page">
+    <div className={`page ${
+      isNavBarVisible ? "page__nav-bar" : ""
+    }`}
+    >
       <CurrentUserContext.Provider value={currentUser}>
         <CardsContext.Provider value={cards}>
           <Routes>
@@ -355,7 +358,9 @@ function App() {
           </Routes>
         </CardsContext.Provider>
       </CurrentUserContext.Provider>
-      <Footer />
+      <Footer
+        isOpen={isNavBarVisible}
+      />
     </div>
   );
 }

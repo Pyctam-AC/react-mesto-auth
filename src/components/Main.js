@@ -32,7 +32,10 @@ function Main({
         isOpen={isOpen}
       />
 
-      <main className="content">
+      <main className={`content ${
+          isOpen ? "content__nav-bar" : ""
+        }`}
+      >
         <section className="profile">
           <div className="profile__info">
             <div onClick={onEditAvatar} className="profile__avatar">
@@ -83,7 +86,7 @@ function Main({
                   currentUser={currentUser}
                 />
               ))}
-            
+
           </ul>
         </section>
       </main>
