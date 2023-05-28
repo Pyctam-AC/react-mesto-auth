@@ -37,6 +37,8 @@ useState, useEffect
 - В поле ввода пропсы прокидываеются с исползованием forwardRef
 
 
+ссылка на  [***react-mesto-auth***](https://pyctam-ac.github.io/react-mesto-auth/index.html)
+
 ---
 ### Автор проекта - Рустам Султангалиев.
 ---
