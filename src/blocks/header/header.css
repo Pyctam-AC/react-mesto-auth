@@ -20,7 +20,7 @@
 
   .header.header_open {
     padding-top: 25px;
-    transform: translateY(120px);
+    transform: translateY(140px);
     border-top: solid 1px rgba(84, 84, 84, .7);
     /* height: 50px; */
   }

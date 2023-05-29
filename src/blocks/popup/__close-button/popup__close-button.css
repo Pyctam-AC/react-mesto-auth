@@ -16,8 +16,10 @@
   cursor: pointer;
 }
 
-.popup__close-button:hover {
-  opacity: 60%;
+@media (any-hover: hover){
+  .popup__close-button:hover {
+    opacity: 60%;
+  }
 }
 
 

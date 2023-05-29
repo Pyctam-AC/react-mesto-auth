@@ -14,8 +14,10 @@
   cursor: pointer;
 }
 
-.profile__add-button:hover {
-  opacity: 60%;
+@media (any-hover: hover){
+  .profile__add-button:hover {
+    opacity: 60%;
+  }
 }
 
 .profile__add-button:active {

@@ -10,7 +10,7 @@
     flex-direction: column;
     width: 100%;
     align-items: center;
-    top: -110px;
+    top: -120px;
     /* text-align: center; */
     justify-content: center;
     /* margin-bottom: 40px;
@@ -19,14 +19,14 @@
     transition: transform 0.2s linear;
     /* border-bottom: solid 1px rgba(84, 84, 84, .7); */
   }
-
+/*
   .header__nav.header__nav_open {
     /* margin-bottom: 35px;
     margin-top: -15px; */
-    padding-bottom: 40px;
-    transform: translateY(10px);
+    /* padding-bottom: 40px; */
+    /* transform: translateY(1px); */
     /* border-bottom: solid 1px rgba(84, 84, 84, .7); */
-    /* visibility: visible; */
-  }
+    /* visibility: visible; 
+  } */
 }
 

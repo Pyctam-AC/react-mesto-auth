@@ -29,8 +29,10 @@
   transform: translateY(10px)
 }
 
-.header__burger-btn:hover {
-  opacity: 60%;
+@media (any-hover: hover) {
+  .header__burger-btn:hover {
+    opacity: 60%;
+  }
 }
 
 .header__burger-btn:active {

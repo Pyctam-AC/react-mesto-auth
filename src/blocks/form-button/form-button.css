@@ -25,8 +25,10 @@
   color: black;
 }
 
-.form-button:hover {
-  background-color: rgba(0, 0, 0, .8);
+@media (any-hover: hover){
+  .form-button:hover {
+    background-color: rgba(0, 0, 0, .8);
+  }
 }
 
 .form-button:active {
@@ -34,8 +36,10 @@
   transform: scale(.95);
 }
 
-.form-button__white-theme:hover {
-  background-color: rgba(255,255,255, .8);
+@media (any-hover: hover){
+  .form-button__white-theme:hover {
+    background-color: rgba(255,255,255, .8);
+  }
 }
 
 .form-button__white-theme:active {

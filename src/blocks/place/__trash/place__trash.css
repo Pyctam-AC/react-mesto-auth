@@ -18,11 +18,12 @@
   visibility: visible;
 }
 
-.place__trash:hover {
-  opacity: 60%;
-  transform: scale(1.05);
+@media (any-hover: hover) {
+  .place__trash:hover {
+    opacity: 60%;
+    transform: scale(1.05);
+  }
 }
-
 
 .place__trash:active {
   transform: scale(.9);

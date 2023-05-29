@@ -14,8 +14,8 @@
 
 @media screen and (max-width: 890px) {
   .header__nav-text {
-    font-size: 14px;
-    line-height: 17px;
+    font-size: 18px;
+    line-height: 20px;
     margin-bottom: 18px;
     margin-right: 0;
   }

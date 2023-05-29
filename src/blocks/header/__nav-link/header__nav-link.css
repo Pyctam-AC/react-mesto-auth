@@ -23,14 +23,10 @@
 
 @media screen and (max-width: 890px) {
   .header__nav-link {
-    font-size: 14px;
-    line-height: 17px;
+    font-size: 18px;
+    line-height: 20px;
   }
 
-  .header__nav-link.header__nav-link_sing {
-    margin-top: 5px;
-    margin-bottom: 0;
-    margin-right: 30px;
 
-  }
+
 }

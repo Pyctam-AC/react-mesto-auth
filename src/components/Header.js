@@ -21,9 +21,7 @@ function Header({
         className="header__logo"
         alt="логотип Russia"
       />
-      <nav className={`header__nav ${
-          isOpen ? "header__nav_open" : ""
-        }`}
+      <nav className="header__nav"
       >
         {location.pathname === "/" &&
           <>

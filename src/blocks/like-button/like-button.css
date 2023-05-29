@@ -13,6 +13,8 @@
   cursor: pointer;
 }
 
-.like-button:hover {
-  opacity: 50%;
+@media (any-hover: hover) {
+  .like-button:hover {
+    opacity: 50%;
+  }
 }
